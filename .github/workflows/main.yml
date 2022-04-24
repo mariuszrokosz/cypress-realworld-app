@@ -19,11 +19,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           runTests: false
-      - run: yarn cypress info
-      - run: node -p 'os.cpus()'
-      - run: yarn types
-      - run: yarn lint
-      - run: yarn test:unit:ci
       - run: yarn build:ci
 
       - name: Save build folder
@@ -174,7 +169,7 @@ jobs:
           name: build
           path: build
 
-      - name: "API test"
+      - name: "API tests"
         uses: cypress-io/github-action@v2
         with:
           config: "viewportWidth=375,viewportHeight=667"
